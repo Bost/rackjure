@@ -23,6 +23,8 @@
         [(and (void? x) (void? y) #t)]
         [(and (pair? x) (pair? y)) (equal? x y)]
         [(and (struct? x) (struct? y)) (egal-struct? x y)]
+        ;; TODO bytes? vector? hash? set? stream?
+        ;; TODO have a look at typed/racket
         [else (eq? x y)]))
 
 (define (egal-struct? x y)
